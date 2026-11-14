@@ -1,0 +1,14 @@
+# token - rough token-budget estimation for agent context management.
+#
+# Deliberately not a tokenizer: no BPE, no vocabulary, no model tables.
+# Integer-only arithmetic over UTF-8 bytes; no heap allocation, no I/O,
+# no third-party dependencies. The estimate is deliberately conservative
+# for budgeting: under-estimation is bounded tighter than over-estimation.
+#
+# `requires = ct >= 0.36.0`: the convenience entry takes the built-in `Str`
+# handle (Phase 36, v0.36.0) and the counter uses static inherent methods
+# (Phase 34, v0.34.0).
+name = token
+version = 0.1.0
+licence = MIT
+requires = ct >= 0.36.0
