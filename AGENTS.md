@@ -264,7 +264,7 @@ AI_ENGINEERING_SPEC=<主规范路径> ...          # 覆盖默认主规范位置
 | 门禁入口 | 未建（当前为需求层、未立项；立项时补 `tools/check.sh`，未实现的子命令必须退出 2） |
 | 文档 snippet | 未建（`docs/snippets/` 待立项后建） |
 | Issue 台账 | 未建（`issues/<id>.md`，前缀 `TOKEN-<n>`） |
-| 包外移入事项 | [docs/backlog.md](docs/backlog.md)（`EXT-TOK-*` 认领与状态登记） |
+| 包清单与公开单元待办 | [docs/backlog.md](docs/backlog.md) |
 | 决策记录 | [docs/requirements.md](docs/requirements.md) §5 待确认（Q-01 起编号） |
 | 版本落点 | `ct.pkg#version`（单处；本仓未发布，暂无 README 版本行） |
 | 偏离项 | 无（见 0.3） |
