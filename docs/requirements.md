@@ -76,11 +76,13 @@
 ### R-01 包清单、独立性与安装面
 
 - **问题**：包必须能被 `ct get` / `ct install` 识别，且不引入任何第三方依赖或 C 边界。
-- **输入 / 期望**：仓库根有 `ct.pkg`、`LICENSE` 与纯 CT 单元；`ct.pkg` 含
-  `name=token`、`version=0.1.0`、`licence=MIT`、`requires=ct >= 0.36.0`；
+- **输入 / 期望**：仓库根有 `ct.pkg`、`LICENSE` 与纯 CT 单元；`ct.pkg` 含 `name=token`、
+  `publisher=ct`、`ns-root=.`、`version=0.1.0`、`licence=MIT`、`requires=ct >= 0.36.0`；
   没有 `dep`、`cflags`、`ldflags`，没有 `.m.ct` 与 shim。
 - **验收**：
-  - `ct.pkg` 四键齐全；删掉 `name` 或 `version` 后 `ct get` 非零退出并报
+  - `ct.pkg` 必备键齐全（`name`、`publisher`、`ns-root`、`version`、`licence`、`requires`），
+    `ct pkg check .` 退出 0；删掉 `name`、`version`、`publisher` 或 `ns-root` 后该检查非零退出并报
+    缺键；删掉 `name` 或 `version` 后 `ct get` 非零退出并报
     `cannot read '<dir>/ct.pkg'`（`ct-lang/docs/package-guide.md:64-84`）。
   - 干净临时目录执行 `ct get token@^0.1.0 && ct install`，示例程序构建并运行。
   - `grep -rn '#include'` 在实现单元（包根 `*.ct` / `*.h.ct`）0 命中；仓库内无 `.m.ct`、
