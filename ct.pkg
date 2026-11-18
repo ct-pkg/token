@@ -5,12 +5,13 @@
 # no third-party dependencies. The estimate is deliberately conservative
 # for budgeting: under-estimation is bounded tighter than over-estimation.
 #
-# `requires = ct >= 0.36.0`: the convenience entry takes the built-in `Str`
-# handle (Phase 36, v0.36.0) and the counter uses static inherent methods
-# (Phase 34, v0.34.0).
+# `requires = ct >= 0.44.1`: the lower bound tracks the current CT release.
+# The language features this package actually relies on arrived in Phase 36
+# (built-in `Str` handle, v0.36.0) and Phase 34 (static inherent methods,
+# v0.34.0).
 name = token
 publisher = ct
 ns-root = .
 version = 0.1.1
 licence = MIT
-requires = ct >= 0.36.0
+requires = ct >= 0.44.1
